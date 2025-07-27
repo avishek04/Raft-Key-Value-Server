@@ -3,18 +3,16 @@
 A fault‑tolerant distributed key‑value store built using the **Raft consensus algorithm**.  
 Ideal for educational purposes and experimentation with leader election, replicated logs, and state machine replication.
 
----
 
-## 🚀 Features
+## Features
 
 - Strong consensus via leader election and log replication  
 - Supports basic operations: `GET`, `SET`, and `CAS` (compare-and‑swap)  
 - Fault-tolerant: operates when a majority of nodes are available  
 - HTTP API for external client interactions
+  
 
----
-
-## 🧠 Architecture Overview
+## Architecture Overview
 
 1. **Raft Module**  
    - Manages leader election, log replication, and safety guarantees like log matching and leader completeness
@@ -27,14 +25,14 @@ Ideal for educational purposes and experimentation with leader election, replica
    - Accepts client requests, encodes operations into Raft commands, and responds after commit  
    - Provides endpoints like `/set?key=...&value=...` and `/get?key=...`
 
----
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
 - **Go 1.20+**  
 - Network access between Raft nodes
+
 
 ### Setup Instructions
 
@@ -67,9 +65,7 @@ curl "http://localhost:2020/set?key=x&value=42"
 curl "http://localhost:2020/get?key=x"
 ```
 
----
-
-## 🧪 Testing
+## Testing
 
 Test scenarios should include:
 
@@ -77,9 +73,8 @@ Test scenarios should include:
 - Node partition and recovery  
 - Concurrent client requests
 
----
 
-## ✅ Consistency & Safety Guarantees
+## Consistency & Safety Guarantees
 
 Raft ensures:
 
@@ -88,9 +83,8 @@ Raft ensures:
 - **Leader Completeness**: Committed entries will persist in future terms  
 - **State Machine Safety**: No conflicting applied commands
 
----
 
-## 🔧 Configuration Options
+## Configuration Options
 
 Configuration parameters you can adjust include:
 
@@ -99,7 +93,6 @@ Configuration parameters you can adjust include:
 - Size and persistence of state logs  
 - Cluster membership and dynamic reconfiguration
 
----
 
 ## Contributing
 
@@ -110,16 +103,14 @@ Contributions welcome! Here’s how to help:
 - Implement client authentication or TLS encryption  
 - Containerize or provide deployment scripts  
 - Write benchmarks or stress tests
-
----
+  
 
 ## License
 
 Distributed under the **MIT License**.
 
----
 
-## 📚 Further Reading
+## Further Reading
 
 - **In Search of an Understandable Consensus Algorithm** by Ongaro & Ousterhout – the original Raft paper ([raft.github.io](https://raft.github.io/raft.pdf))  
 - Tutorials and deep dives into Raft, including building a key‑value store in Go ([eli.thegreenplace.net](https://eli.thegreenplace.net/2024/implementing-raft-part-4-keyvalue-database/))
